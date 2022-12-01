@@ -12,8 +12,8 @@ export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      contacts: [...defaulContacts],
-      filteredContacts: [...defaulContacts],
+      contacts: [],
+      filteredContacts: [],
       name: '',
       number: '',
       filter: ''
@@ -22,6 +22,16 @@ export class App extends React.Component {
     this.onChangeFiled = this.onChangeFiled.bind(this);
     this.onFilterContacts = this.onFilterContacts.bind(this);
     this.onDeleteContact = this.onDeleteContact.bind(this);
+  }
+
+  componentDidMount() {
+    let storageContacts = localStorage.getItem("contacts");
+    let parsedContacts = JSON.parse(storageContacts);
+    if(parsedContacts) {
+      this.setState({
+        contacts: parsedContacts
+      });
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -48,6 +58,7 @@ export class App extends React.Component {
         name: "",
         number: ""
       });
+      localStorage.setItem("contacts", JSON.stringify([...this.state.contacts, newContact]));
     }
   }
 
@@ -68,6 +79,7 @@ export class App extends React.Component {
     this.setState({
       contacts: [...newContacts]
     });
+    localStorage.setItem("contacts", JSON.stringify([...newContacts]));
   }
 
   render () {
