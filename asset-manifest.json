@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/alina-react-phonebook04/static/css/main.94916708.css",
+    "main.js": "/alina-react-phonebook04/static/js/main.69887318.js",
+    "index.html": "/alina-react-phonebook04/index.html",
+    "main.94916708.css.map": "/alina-react-phonebook04/static/css/main.94916708.css.map",
+    "main.69887318.js.map": "/alina-react-phonebook04/static/js/main.69887318.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.94916708.css",
+    "static/js/main.69887318.js"
+  ]
+}
