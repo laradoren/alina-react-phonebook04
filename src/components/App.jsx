@@ -23,7 +23,7 @@ export const App = () => {
       item.name.toLowerCase().includes(filter.toLowerCase())
     );
     setFilteredContacts(filteredContacts);
-  }, [filter, contacts.length]);
+  }, [filter, contacts]);
 
   const onAddContact = opt => {
     opt.preventDefault();
